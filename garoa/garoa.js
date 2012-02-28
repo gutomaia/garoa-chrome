@@ -4,6 +4,6 @@
 
 function is_garoa_open(status){
     var data = JSON.parse(status);
-    console.log(data.status);
-    return data.status == "open for public";
+    console.log("Garoa open is " + data.open);
+    return data.open;
 }
