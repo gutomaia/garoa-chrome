@@ -1,0 +1,18 @@
+{
+  "name": "Garoa",
+  "version": "0.1",
+  "description": "Shows if Garoa Hacker Club is open",
+  "browser_action":{
+    "default_icon":"icon.png"
+  },
+  "background_page": "background.html",
+  "icons": {
+    "16": "icon-micro.png",
+    "48": "icon-small.png",
+    "128": "icon-large.png"
+  },
+  "permissions": [
+    "notifications",
+    "https://garoahc.appspot.com/"
+  ]
+}
