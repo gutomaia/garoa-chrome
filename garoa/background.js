@@ -26,14 +26,13 @@ function handleResponse() {
     if (is_open && !was_open){
         console.log('changed status to OPEN');
         notify(true);
-        change_icon(true);
     }else if (was_open && (!is_open)){
         console.log('changed status to CLOSED');
         notify(false);
-        change_icon(false);
     } else {
         console.log('do nothing');
     }
+    change_icon(is_open);
     localStorage.garoa_open = is_open;
 }
 
@@ -79,7 +78,6 @@ function notify(is_open){
 if (!localStorage.isInitialized) {
     localStorage.garoa_open = false;
 }
-localStorage.garoa_open = false;
 
 if (webkitNotifications) {
     var interval = 1000; 
