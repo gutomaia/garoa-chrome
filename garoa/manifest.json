@@ -1,6 +1,6 @@
 {
   "name": "Garoa",
-  "version": "0.1",
+  "version": "0.11",
   "description": "Shows if Garoa Hacker Club is open",
   "browser_action":{
     "default_icon":"icon.png"
