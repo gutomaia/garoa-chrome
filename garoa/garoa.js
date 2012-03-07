@@ -4,6 +4,11 @@
 
 function is_garoa_open(status){
     var data = JSON.parse(status);
-    console.log("Garoa open is " + data.open);
+
+    var strStatus = "closed";
+    if(data.open){
+        strStatus="open";
+    }
+    console.log("Garoa open is " + strStatus);
     return data.open;
 }
