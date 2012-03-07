@@ -80,12 +80,12 @@ if (!localStorage.isInitialized) {
 }
 
 if (webkitNotifications) {
-    var interval = 1000; 
+    var interval = 60000; 
     main();
     setInterval(
         function() {
             main();
-        }, 60000
+        }, interval
     );
 } else {
     chrome.tabs.create({url: 'error.html'});
