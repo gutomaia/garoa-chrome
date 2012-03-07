@@ -4,7 +4,7 @@
 
 var req;
 
-var garoa_api_url = "https://garoahc.appspot.com/";
+var garoa_api_url = "https://garoahc.appspot.com/status";
 
 function main() {
     req = new XMLHttpRequest();
