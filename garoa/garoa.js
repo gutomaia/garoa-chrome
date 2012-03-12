@@ -21,17 +21,13 @@ function is_garoa_open(status){
     }
 	
 	//Print Date
-	var dateLastchange = new Date(data.lastchange);
-	console.log("Last Change: " + dateLastchange);
-	console.log("A: " + data.lastchange);
-	console.log("B: " + new Date().getTime());
-	console.log("C: " + (new Date().getTime() - data.lastchange));
-	console.log("D: " + new Date(new Date().getTime() - data.lastchange));
+	var dateLastchange = new Date(data.lastchange*1000); //need to *1000 to convert from unix time
+	console.log("Last Update: " + dateLastchange);
 	
 	//Check lastchange Date
 	var decayTime= 86400000; //24h
-	if( (new Date().getTime() - data.lastchange) < decayTime ){
-		strStatus++;
+	if( (new Date().getTime() - (data.lastchange *1000) ) < decayTime ){
+		returnStatus++;
 		strUnknown="";
 	}
 
