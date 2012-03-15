@@ -25,7 +25,7 @@ function is_garoa_open(status){
 	console.log("Last Update: " + dateLastchange);
 	
 	//Check lastchange Date
-	var decayTime= 86400000; //24h
+	var decayTime= 20000; //20 min
 	if( (new Date().getTime() - (data.lastchange *1000) ) < decayTime ){
 		returnStatus++;
 		strUnknown="";
