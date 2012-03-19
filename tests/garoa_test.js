@@ -20,7 +20,7 @@ var open_response = {
     "address": "Rua Vitorino Carmilo, 459 - Santa Cec\u00edlia - 01153-000 - S\u00e3o Paulo/SP - Brasil",
     "lat": -23.532896000000001,
     "logo": "https://garoahc.appspot.com/static/logo.png",
-    "open": false,
+    "open": true,
     "events": [{"type": "check-in", "name": "Luis L.", "t": 1330399919}],
     "icon": {
         "open": "https://garoahc.appspot.com/static/icon_open.png",
@@ -31,6 +31,6 @@ var open_response = {
 assert.ok(is_garoa_open(open_response));
 
 var closed_response = open_response;
-closed_response.status = "closed for public"
+closed_response.open = "false"
 
 assert.ok(!is_garoa_open(closed_response));
