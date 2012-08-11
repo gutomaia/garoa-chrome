@@ -44,16 +44,16 @@ function change_icon(status){
 		switch(status){
 			case 0:
 				icon.path = "icon_closed_y.png";
-			break;
+				break;
 			case 1:
 				icon.path = "icon_closed.png";
-			break;
+				break;
 			case 2:
 				icon.path = "icon_open_y.png";
-			break;
+				break;
 			case 3:
 				icon.path = "icon_open.png";
-			break;
+				break;
 			default:
 				icon.path = "icon_closed_y.png";
 		}
@@ -72,19 +72,19 @@ function notify(status){
 		case 0:
 			icon = "icon_closed_y.png";
 			msg = "is closed! (Unknown)";
-		break;
+			break;
 		case 1:
 			icon = "icon_closed.png";
 			msg = "is closed!";
-		break;
+			break;
 		case 2:
 			icon = "icon_open_y.png";
 			msg = "is open! (Unknown)" ;
-		break;
+			break;
 		case 3:
 			icon = "icon_open.png";
 			msg = "is open!" ;
-		break;
+			break;
 		default:
 			icon = "icon_closed_y.png";
 			msg = "is closed! (Unknown)";
@@ -117,6 +117,7 @@ if (webkitNotifications) {
             main();
         }, 60000
     );
+
 } else {
     chrome.tabs.create({url: 'error.html'});
 }

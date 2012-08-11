@@ -1,6 +1,7 @@
 {
-  "name": "Garoa",
-  "version": "0.13",
+  "manifest_version": 1,
+  "name": "Garoa Hackerspace Status",
+  "version": "0.14",
   "description": "Shows if Garoa Hacker Club is open",
   "browser_action":{
     "default_icon":"icon.png"
@@ -13,6 +14,7 @@
   },
   "permissions": [
     "notifications",
-    "https://garoahc.appspot.com/"
+    "https://garoahc.appspot.com/",
+    "http://cdn.pubnub.com/"
   ]
 }
