@@ -15,6 +15,7 @@
   "permissions": [
     "notifications",
     "https://garoahc.appspot.com/",
-    "http://cdn.pubnub.com/"
+    "http://cdn.pubnub.com/",
+    "http://*.pubnub.com/"
   ]
 }
