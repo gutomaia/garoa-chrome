@@ -1,5 +1,70 @@
 <!--
 Copyright (C) 2012 Guto Maia <guto@guto.net>
+update by Luis Leao <eu@luisleao.com.br>
 -->
 <script src="garoa.js" ></script>
 <script src="background.js" ></script>
+
+
+
+<div sub-key="sub-6e561187-8e3a-11e1-8a5c-ff10d706c73e" ssl="off" origin="pubsub.pubnub.com" id="pubnub"></div>
+
+<script src="http://cdn.pubnub.com/pubnub-3.1.min.js"></script>
+<script>(function(){
+/*
+	var pubnub = PUBNUB({
+		publish_key   : 'demo',
+		subscribe_key : 'demo',
+		origin        : 'pubsub.pubnub.com',
+		ssl           : true
+	});
+*/
+	PUBNUB.subscribe({
+		channel  : 'garoa_status_api',
+		connect  : function() { 
+			//console.log("connected!");
+		},
+		reconnect  : function() {        // CONNECTION RESTORED.
+			//console.log("reconnected!");
+		},
+		callback : function(message) {
+			//console.debug("callback");
+			//setStatus(message.open);
+			
+			var status = message.open ? "3" : "1";
+			var last_status = localStorage.garoa_open;
+
+			console.log('status ' + status);
+			console.log('last_status '+ last_status);
+
+			change_icon(status);
+			if(status != last_status){
+				notify(status);
+			}
+			localStorage.garoa_open = status;
+
+
+			if (message.checkin) {
+				for (var i=0; i<message.checkin.length; i++) {
+					var checkin = message.checkin[i];
+					var icon = checkin.extra;
+					var header = "Novo checkin!";
+					var msg = "'" + checkin.name + "'' acabou de fazer checkin.";
+
+					var notification = webkitNotifications.createNotification(
+						icon,
+						header,
+						msg
+					);
+					notification.ondisplay = function () {
+						setTimeout(function () { notification.cancel() }, 4000);
+					};
+					notification.show();
+				}	
+			}
+
+			console.debug(message);
+		}
+	});
+
+})();</script>
