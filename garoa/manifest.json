@@ -1,11 +1,14 @@
 {
+  "manifest_version": 2,
   "name": "Garoa Hackerspace Status",
   "version": "0.14",
   "description": "Shows if Garoa Hacker Club is open",
   "browser_action":{
     "default_icon":"icon.png"
   },
-  "background_page": "background.html",
+  "background": {
+    "scripts": ["garoa.js", "background.js"]
+  },
   "icons": {
     "16": "icon-micro.png",
     "48": "icon-small.png",
