@@ -38,6 +38,7 @@ dist/garoa:
 
 package: dist/garoa
 	@cp lib/* dist/garoa
+	@cp images/* dist/garoa
 	@cd dist && zip garoa.zip garoa/* > /dev/null
 
 report:

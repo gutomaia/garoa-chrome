@@ -2,7 +2,7 @@ var assert = require('assert');
 
 var fs = require('fs');
 
-var content = fs.readFileSync(__dirname + '/../garoa/manifest.json', 'utf8');
+var content = fs.readFileSync(__dirname + '/../lib/manifest.json', 'utf8');
 
 var manifest = eval('(' + content + ')');
 
