@@ -1,0 +1,28 @@
+{
+  "author" : "Gustavo Maia Neto (Guto Maia) <guto@guto.net>",
+  "name" : "garoa-chrome",
+  "version" : "0.0.1",
+  "description" : "Garoa Hacker Space status Extension",
+  "homepage" : "http://gutomaia.net/garoa-chrome",
+  "keywords" : ["util", "functional", "client", "browser"],
+  "contributors" : [],
+  "dependencies" : {
+      "connect": "2.3.6",
+      "async": "0.1.x",
+      "nopt": "1.0.x",
+      "temp": "0.4.x"
+  },
+  "devDependencies" : {
+    "amdefine":"0.0.2",
+    "nodeunit":"0.7.x",
+    "jsdom":"0.3.x",
+    "jshint": "0.6.x",
+    "recess": "1.0.3",
+    "uglify-js": "1.2.6",
+    "supervisor": "0.3.1"
+    },
+  "repository" : {"type": "git", "url": "https://github.com/gutomaia/garoa-chrome.git"},
+  "scripts": {
+    "test": "nodeunit tests"
+  }
+}
