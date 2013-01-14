@@ -36,9 +36,14 @@ test: build
 dist/garoa:
 	@mkdir -p dist/garoa
 
-package: dist/garoa
+dist/garoa/logo.png: dist/garoa
+	@cp images/logo.png dist/garoa
+
+dist/garoa/icon*.png: dist/garoa
+	@cp images/icon* dist/garoa
+
+package: dist/garoa/logo.png dist/garoa/icon*.png
 	@cp lib/* dist/garoa
-	@cp images/* dist/garoa
 	@cd dist && zip garoa.zip garoa/* > /dev/null
 
 report:
